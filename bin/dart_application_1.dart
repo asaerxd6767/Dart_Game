@@ -1,11 +1,11 @@
 import 'dart:math';
 import 'dart:io';
 
-enum Choices { paper, sissor, rock }
+enum Choices { paper, scissor, rock }
 
 void main() {
   var ai = Random();
-  print('Rock - Paper - Sissor game');
+  print('Rock - Paper - Scissor game');
   print('Your task is to choose from 1 to 3 respectively');
   int attempts = 0;
   int score = 0;
@@ -41,7 +41,7 @@ Choices choice(int number) {
     case 2:
       return Choices.paper;
     case 3:
-      return Choices.sissor;
+      return Choices.scissor;
     default:
       throw Error();
   }
@@ -58,7 +58,7 @@ bool gameRule(Choices Ai, Choices User) {
       return false;
     }
   } else if (User == Choices.rock) {
-    if (Ai == Choices.sissor) {
+    if (Ai == Choices.scissor) {
       return true;
     } else {
       return false;
